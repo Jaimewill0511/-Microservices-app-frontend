@@ -11,4 +11,5 @@ COPY . .
 EXPOSE 80
 
 # The default command to run Nginx
+# dev comment
 CMD ["nginx", "-g", "daemon off;"]
