@@ -11,7 +11,7 @@ steps:
 images:
 - 'vihangihk/flask-frontend:$SHORT_SHA'
 substitutions:
-  _ZONE: 'us-central1-a'
+  _ZONE: 'us-central1'
   _CLUSTER_NAME: 'terraform-gke'
 
 options:
