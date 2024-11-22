@@ -16,4 +16,5 @@ substitutions:
 
 options:
   logging: CLOUD_LOGGING_ONLY
+region: global
 
