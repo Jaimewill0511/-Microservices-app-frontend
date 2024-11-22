@@ -13,3 +13,7 @@ images:
 substitutions:
   _ZONE: 'us-east1'
   _CLUSTER_NAME: 'terraform-gke'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
