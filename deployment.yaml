@@ -36,7 +36,7 @@ spec:
         app: frontend-app
     spec:
       containers:
-        - name: frontend
+        - name: frontend-app
           image: vihangihk/flask-frontend:latest
           ports:
             - containerPort: 80

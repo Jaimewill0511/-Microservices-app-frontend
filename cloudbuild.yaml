@@ -8,19 +8,16 @@ steps:
         ".",
       ]
   - name: "gcr.io/cloud-builders/kubectl"
-    args:
-      [
+    args: [
         "set",
         "image",
         "deployment/frontend-app",
-        "frontend=gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA",
+        "frontend-app=gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA", # Changed from 'frontend' to 'frontend-app'
         "--namespace=frontend-app",
       ]
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}"
-images:
-  - "gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA"
 substitutions:
   _ZONE: "us-central1"
   _CLUSTER_NAME: "terraform-gke"
