@@ -12,7 +12,7 @@ steps:
       [
         "set",
         "image",
-        "deployment/frontend-appt",
+        "deployment/frontend-app",
         "myapp=gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA",
         "--namespace=frontend-app",
       ]
