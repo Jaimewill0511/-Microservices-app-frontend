@@ -11,7 +11,7 @@ steps:
 images:
 - 'gcr.io/quantum-star-435523-g9/myapp:$SHORT_SHA'
 substitutions:
-  _ZONE: 'us-central1-a'
+  _ZONE: 'us-central1'
   _CLUSTER_NAME: 'terraform-gke'
 options:
   logging: CLOUD_LOGGING_ONLY
