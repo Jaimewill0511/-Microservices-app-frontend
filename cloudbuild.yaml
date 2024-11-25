@@ -1,8 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/myapp:$SHORT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/quantum-star-435523-g9/myapp:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/myapp:$SHORT_SHA']
+  args: ['push', 'gcr.io/quantum-star-435523-g9/myapp:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/frontend-deployment', 'myapp=gcr.io/quantum-star-435523-g9/frontend:$SHORT_SHA', '--namespace=default']
   env:
