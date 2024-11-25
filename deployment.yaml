@@ -7,6 +7,17 @@ spec: {}
 status: {}
 
 ---
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJnY3IuaW8iOnsidXNlcm5hbWUiOiJfanNvbl9rZXkiLCJwYXNzd29yZCI6In1cciIsImVtYWlsIjoicXVhbnR1bS1zdGFyLTQzNTUyMy1nOUBhcHBzcG90LmdzZXJ2aWNlYWNjb3VudC5jb20iLCJhdXRoIjoiWDJwemIyNWZhMlY1T24wTiJ9fX0=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: gcr-json-key
+  namespace: frontend-app
+type: kubernetes.io/dockerconfigjson
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,6 +40,8 @@ spec:
           image: vihangihk/flask-frontend:latest
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: gcr-json-key
 
 ---
 apiVersion: v1
