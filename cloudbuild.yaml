@@ -4,12 +4,12 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/myapp:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set', 'image', 'deployment/frontend-deployment', 'myapp=gcr.io/$PROJECT_ID/frontend:$SHORT_SHA', '--namespace=default']
+  args: ['set', 'image', 'deployment/frontend-deployment', 'myapp=gcr.io/quantum-star-435523-g9/frontend:$SHORT_SHA', '--namespace=default']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}'
 images:
-- 'gcr.io/$PROJECT_ID/myapp:$SHORT_SHA'
+- 'gcr.io/quantum-star-435523-g9/myapp:$SHORT_SHA'
 substitutions:
   _ZONE: 'us-central1-a'
   _CLUSTER_NAME: 'terraform-gke'
