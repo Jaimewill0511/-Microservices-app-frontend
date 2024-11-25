@@ -1,20 +1,26 @@
 steps:
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "vihangihk/flask-frontend:$SHORT_SHA", "."]
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA",
+        ".",
+      ]
   - name: "gcr.io/cloud-builders/kubectl"
     args:
       [
         "set",
         "image",
         "deployment/frontend-app",
-        "frontend=vihangihk/flask-frontend:$SHORT_SHA",
+        "frontend=gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA",
         "--namespace=frontend-app",
       ]
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}"
 images:
-  - "vihangihk/flask-frontend:$SHORT_SHA"
+  - "gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA"
 substitutions:
   _ZONE: "us-central1"
   _CLUSTER_NAME: "terraform-gke"
