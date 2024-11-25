@@ -20,6 +20,6 @@ steps:
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}"
 substitutions:
   _ZONE: "us-central1"
-  _CLUSTER_NAME: "terraform-gke"
+  _CLUSTER_NAME: "dev-cluster"
 options:
   logging: CLOUD_LOGGING_ONLY
