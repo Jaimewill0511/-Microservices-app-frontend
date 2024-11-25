@@ -18,6 +18,8 @@ steps:
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}"
+images:
+  - "gcr.io/quantum-star-435523-g9/frontend-app:$SHORT_SHA"
 substitutions:
   _ZONE: "us-central1"
   _CLUSTER_NAME: "dev-cluster"
